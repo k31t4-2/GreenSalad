@@ -11,6 +11,7 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 170%;
+  overflow-x: hidden;
 }
 @media (min-width: 768px ) {
   body {
@@ -528,7 +529,6 @@ body {
 
 .bg {
   background-repeat: no-repeat;
-  background-position: center top;
   background-size: cover;
   height: 250px;
   width: 100%;
@@ -544,7 +544,12 @@ body {
 }
 @media (min-width: 768px ) {
   .salad-bg {
+<<<<<<< HEAD
     background-image: url(https://github.com/k31t4-2/GreenSalad/blob/main/img/background/img%EF%BC%9A%E3%82%B5%E3%83%A9%E3%83%80.jpg?raw=true);
+=======
+    background-image: url(../img/background/img：サラダ.jpg);
+    background-position: center top;
+>>>>>>> 6bfceb0 (commit)
   }
 }
 
@@ -554,6 +559,7 @@ body {
 @media (min-width: 768px ) {
   .shop-bg {
     background-image: url(../img/background/img：店内.png);
+    background-position: center center;
   }
 }
 
@@ -769,6 +775,7 @@ body {
   font-family: "Noto Sans JP", sans-serif;
   font-size: 14px;
   letter-spacing: 0.42px;
+  margin-bottom: 34px;
 }
 @media (min-width: 768px ) {
   .menu .menu__inner .menu__content .menu__boxes .menu-box .menu-box__body .menu-box__pfc {
@@ -1024,7 +1031,11 @@ body {
   right: 17px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+<<<<<<< HEAD
   background-image: url(https://github.com/k31t4-2/GreenSalad/blob/main/icon/button.png?raw=true);
+=======
+  background-image: url(../icon/button.png);
+>>>>>>> 6bfceb0 (commit)
   background-repeat: no-repeat;
   background-size: cover;
   width: 19px;

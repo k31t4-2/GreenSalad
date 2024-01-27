@@ -541,12 +541,12 @@ body {
 }
 
 .salad-bg {
-  background-image: url(../img/background/img-sp：サラダ.png);
+  background-image: url(https://github.com/k31t4-2/GreenSalad/blob/main/img/background/img-sp%EF%BC%9A%E3%82%B5%E3%83%A9%E3%83%80.jpg?raw=true);
   background-position: center center;
 }
 @media (min-width: 768px ) {
   .salad-bg {
-    background-image: url(../img/background/img：サラダ.jpg);
+    background-image: url(https://github.com/k31t4-2/GreenSalad/blob/main/img/background/img%EF%BC%9A%E3%82%B5%E3%83%A9%E3%83%80.png?raw=true);
   }
 }
 

@@ -13,11 +13,11 @@
   }
 }
 .salad-bg {
-  background-image: url(../img/background/img-sp：サラダ.jpg);
+  background-image: url(../img/background/img-sp-salad.jpg);
   background-position: center center;
 
   @include bre.mq(pc) {
-    background-image: url(../img/background/img：サラダ.png);
+    background-image: url(../img/background/img-salad.png);
   }
 }
 .shop-bg {

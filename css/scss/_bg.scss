@@ -13,6 +13,7 @@
 }
 .salad-bg {
   background-image: url(../img/background/img-sp：サラダ.png);
+  background-position: center center;
 
   @include bre.mq(pc) {
     background-image: url(../img/background/img：サラダ.jpg);

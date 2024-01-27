@@ -4,6 +4,7 @@
 .bg {
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center top;
   height: 250px;
   width: 100%;
 
@@ -12,12 +13,11 @@
   }
 }
 .salad-bg {
-  background-image: url(../img/background/img-sp：サラダ.png);
+  background-image: url(../img/background/img-sp：サラダ.jpg);
   background-position: center center;
 
   @include bre.mq(pc) {
-    background-image: url(../img/background/img：サラダ.jpg);
-    background-position: center top;
+    background-image: url(../img/background/img：サラダ.png);
   }
 }
 .shop-bg {
@@ -25,6 +25,5 @@
 
   @include bre.mq(pc) {
     background-image: url(../img/background/img：店内.png);
-    background-position: center center;
   }
 }

@@ -530,6 +530,7 @@ body {
 .bg {
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center top;
   height: 250px;
   width: 100%;
 }
@@ -546,7 +547,6 @@ body {
 @media (min-width: 768px ) {
   .salad-bg {
     background-image: url(../img/background/img：サラダ.jpg);
-    background-position: center top;
   }
 }
 
@@ -556,7 +556,6 @@ body {
 @media (min-width: 768px ) {
   .shop-bg {
     background-image: url(../img/background/img：店内.png);
-    background-position: center center;
   }
 }
 

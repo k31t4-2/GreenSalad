@@ -1356,14 +1356,14 @@ body {
 #contact
 ============================*/
 .contact {
-  background-image: url(../../img/contact/img-sp：野菜.png);
+  background-image: url(../img/contact/img-sp：野菜.png);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 130px 0;
 }
 @media (min-width: 768px ) {
   .contact {
-    background-image: url(../../img/contact/img：野菜.png);
+    background-image: url(../img/contact/img：野菜.png);
   }
 }
 .contact .inner.contact__inner {

@@ -15,8 +15,14 @@
 .salad-bg {
   background-image: url(../img/background/img-sp：サラダ.png);
 
+
   @include bre.mq(pc) {
+<<<<<<< HEAD
     background-image: url(../img/background/img：サラダ.png);
+=======
+    background-image: url(../img/background/img：サラダ.jpg);
+    
+>>>>>>> 11345c2 (commit)
   }
 }
 .shop-bg {

@@ -1,0 +1,18 @@
+@use "./scss/breakpoint";
+@use "./scss/common";
+@use "./scss/variable";
+
+// module ------------
+@use "./scss/heading";
+@use "./scss/fageInUp.scss";
+
+// section -----------
+@use "./scss/header";
+@use "./scss/fv";
+@use "./scss/concept";
+@use "./scss/about";
+@use "./scss/bg";
+@use "./scss/menu";
+@use "./scss/shop";
+@use "./scss/contact";
+@use "./scss/footer";

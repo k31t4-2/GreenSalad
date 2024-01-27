@@ -1,0 +1,59 @@
+@use "./breakpoint" as bre;
+@use "./variable" as var;
+
+
+// heading ------------------------------
+.heading {
+  text-align: center;
+  position: relative;
+  padding-bottom: calc(12px - 2px);
+
+  @include bre.mq(pc) {
+    padding-bottom: calc(16px - 2px);
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 2px;
+    background: #159741;
+  }
+
+  &-en {
+    color: var.$color-black;
+    font-family: var.$font-Reross;
+    letter-spacing: 1.6px;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: normal;
+
+    @include bre.mq(pc) {
+      letter-spacing: 2.4px;
+      font-size: 48px;
+    }
+  }
+
+  &-ja {
+    color: var.$color-accent;
+    font-family: var.$font-Noto;
+    color: var.$color-black;
+    font-family: var.$font-Noto;
+    color: var.$color-accent;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 12px;
+    font-size: 14px;
+    letter-spacing: 0.7px;
+
+    @include bre.mq(pc) {
+      font-size: 18px;
+      letter-spacing: 0.9px;
+    }
+  }
+}

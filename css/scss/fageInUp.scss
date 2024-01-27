@@ -1,0 +1,36 @@
+// 下から上にふわっとさせるアニメーション
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s, transform 1s;
+
+  &.is-in-view {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+
+// 右から左にふわっとさせるアニメーション
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 1s, transform 2s;
+
+  &.is-in-view {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+// 左から右にふわっとさせる
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1s, transform 2s;
+
+  &.is-in-view {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

@@ -1,0 +1,37 @@
+@use "./breakpoint" as bre;
+@use "./variable" as var;
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  background-color: var.$color-base;
+  color: var.$color-black;
+  font-family: var.$font-Noto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 170%;
+
+  @include bre.mq(pc) {
+    font-size: 18px;
+  }
+}
+
+.hidden-pc {
+  display: block;
+
+  @include bre.mq(pc) {
+    display: none;
+  }
+}
+
+.hidden-sp {
+  display: none;
+
+  @include bre.mq(pc) {
+    display: block;
+  }
+}

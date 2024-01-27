@@ -1,0 +1,28 @@
+@use "./breakpoint" as bre;
+@use "./variable" as var;
+
+.bg {
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  height: 250px;
+  width: 100%;
+
+  @include bre.mq(pc) {
+    height: 450px;
+  }
+}
+.salad-bg {
+  background-image: url(../../img/background/img-sp：サラダ.png);
+
+  @include bre.mq(pc) {
+    background-image: url(../../img/background/img：サラダ.jpg);
+  }
+}
+.shop-bg {
+  background-image: url(../../img/background/img-sp：店内.png);
+
+  @include bre.mq(pc) {
+    background-image: url(../../img/background/img：店内.png);
+  }
+}

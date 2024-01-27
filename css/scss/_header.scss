@@ -1,0 +1,58 @@
+@use "./variable" as var;
+@use "./breakpoint" as bre;
+
+.header {
+  width: 100%;
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 16.95px;
+    padding-right: 16px;
+
+    @include bre.mq(pc) {
+      padding-bottom: 15px;
+      padding-left: 31px;
+      padding-right: 71px;
+    }
+
+    .header__logo {
+      width: 55px;
+      height: 29.397px;
+
+      @include bre.mq(pc) {
+        width: 117.871px;
+        height: 63px;
+      }
+    }
+
+    .nav {
+      .nav__list {
+        display: flex;
+        gap: 20px;
+
+
+        .nav__item {
+          .nav__link {
+            display: block;
+            color: var.$color-white;
+            font-family: var.$font-Reross;
+            font-size: 14px;
+            line-height: normal;
+            letter-spacing: 0.42px;
+
+            @include bre.mq(pc) {
+              font-size: 18px;
+              font-weight: 400;
+              letter-spacing: 0.54px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

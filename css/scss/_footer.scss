@@ -1,0 +1,112 @@
+@use "./breakpoint" as bre;
+@use "./variable" as var;
+
+.footer {
+  background: var.$color-main;
+  position: relative;
+
+  .footer__inner {
+    text-align: center;
+    padding-top: 48px;
+    padding-bottom: 10px;
+
+    // sns
+    .sns__list {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      justify-content: center;
+      margin-bottom: 40px;
+
+      .sns__item {
+        width: 40px;
+        height: 40px;
+
+        .sns__item-link {
+          display: block;
+        }
+      }
+    }
+
+    // ナビゲーション
+    .nav {
+      margin-bottom: 40px;
+
+      .nav__list {
+        display: flex;
+        gap: 32px;
+        justify-content: center;
+
+        .nav__item {
+          .nav__link {
+            display: block;
+            color: var.$color-black;
+            font-family: var.$font-Reross;
+            font-size: 14px;
+            line-height: normal;
+            letter-spacing: 0.42px;
+
+            @include bre.mq(pc) {
+              font-size: 18px;
+              font-weight: 400;
+              letter-spacing: 0.54px;
+            }
+          }
+        }
+      }
+    }
+
+
+
+    .footer__logo {
+      margin-bottom: 30px;
+      text-align: center;
+
+      a {
+        display: inline-block;
+      }
+    }
+
+    .copyright {
+      color: var.$color-black;
+      font-family: var.$font-Noto;
+      font-size: 12px;
+      font-style: normal;
+      letter-spacing: 0.36px;
+    }
+  }
+
+  .to-top {
+    position: absolute;
+    top: -35px;
+    right: 16px;
+    cursor: pointer;
+    opacity: 0; //最初は隠す
+    visibility: hidden; //最初は機能を使えなくする。（念の為）
+    transition: all .3s; // ふんわり出現
+
+    a {
+      display: block;
+    }
+
+    &.is-show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @include bre.mq(pc) {
+      top: -60px;
+      right: 60px;
+    }
+
+    img {
+      width: 70px;
+      height: 70px;
+
+      @include bre.mq(pc) {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
+}

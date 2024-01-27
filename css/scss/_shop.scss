@@ -1,0 +1,296 @@
+@use "./breakpoint" as bre;
+@use "./variable" as var;
+
+.shop {
+  background: var.$color-main;
+  padding: 64px 0;
+
+  @include bre.mq(pc) {
+    padding: 120px 0;
+  }
+
+  .heading {
+    margin-bottom: 56px;
+
+    @include bre.mq(pc) {
+      margin-bottom: 80px;
+    }
+  }
+
+  .shop__map {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 56px;
+
+    @include bre.mq(pc) {
+      height: 465px;
+      margin-bottom: 80px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      vertical-align: bottom; //下に余白ができるので消す
+      filter: grayscale(1);
+    }
+  }
+
+  .shop__inner {
+    padding-right: 16px;
+    padding-left: 16px;
+
+    @include bre.mq(pc) {
+      padding-right: 0;
+    }
+  }
+
+  .shop__info-wrap {
+    @include bre.mq(pc) {
+      max-width: 1260px;
+      margin: auto;
+    }
+  }
+
+  .shop__info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 98px;
+
+    @include bre.mq(pc) {
+      // max-width: 1260px;
+      width: 100%;
+      margin-bottom: 80px;
+      flex-direction: row;
+      justify-content: flex-end;
+
+      gap: 9%;
+    }
+
+    .shop-info__head {
+      order: 2;
+      max-width: 700px;
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+    }
+  }
+
+  .shop-info__title {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    @include bre.mq(pc) {
+      gap: 4px;
+    }
+
+    .title-en {
+      color: var.$color-black;
+      font-family: var.$font-Reross;
+      font-size: 32px;
+      letter-spacing: 0.96px;
+
+      span {
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%;
+        font-size: 18px;
+        margin-right: 4px;
+      }
+    }
+
+    .title-ja {
+      font-family: var.$font-Noto;
+      font-size: 16px;
+      line-height: normal;
+      letter-spacing: 0.48px;
+    }
+
+
+  }
+
+  .shop-info__body {
+    order: 1;
+
+    .shop-info__text,
+    .shop-info__detail {
+      color: var.$color-black;
+      font-family: var.$font-Noto;
+      line-height: 170%;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 170%;
+      letter-spacing: 0.48px;
+    }
+
+    .shop-info__text {
+
+      .shop-info__postCode {}
+
+      .shop-info__address {}
+
+      .shop-info__tel {}
+    }
+
+    // table ----------
+    .shop-info__detail {
+      tr {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+      }
+
+      th {
+        min-width: 70px;
+      }
+
+      td {}
+    }
+  }
+
+}
+
+.shop-postCard {
+  box-shadow: 0px 4px 20px 0px rgba(161, 159, 159, 0.60);
+  background: #FFF;
+  padding: 18px 10px 113px;
+
+  @include bre.mq(pc) {
+    max-width: 1146px;
+    margin: auto;
+    padding: 30px 32px 41px 34px;
+  }
+
+  .shop-postCard__inner {
+    .shop-postCard__images {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+
+      @include bre.mq(pc) {
+        flex-direction: row;
+        margin-bottom: 27px;
+      }
+
+      .shop-postCard__image {
+        position: relative;
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: calc(100% - 28px);
+          height: calc(100% - 28px);
+          border: 1px solid var.$color-white;
+
+          @include bre.mq(pc) {
+            width: calc(100% - 38px);
+            height: calc(100% - 38px);
+          }
+        }
+
+        &:nth-child(1) {
+          &::before {
+            @include bre.mq(pc) {
+              width: calc(100% - 54px);
+            }
+          }
+        }
+
+        &:nth-child(2) {}
+
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+
+        .image-pc {
+          display: none;
+
+
+          @include bre.mq(pc) {
+            display: block;
+          }
+        }
+
+        .image-sp {
+          display: block;
+
+          @include bre.mq(pc) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .shop-postCard__body {
+      display: flex;
+      flex-direction: column;
+      padding: 0 17px;
+
+      @include bre.mq(pc) {
+        flex-direction: row;
+        gap: 52.96px;
+        padding: 0;
+      }
+
+      .shop-postCard__address {
+        text-align-last: left;
+        color: var.$color-black;
+        font-family: var.$font-Satisfy;
+        font-size: 30px;
+        letter-spacing: 1.5px;
+
+        @include bre.mq(pc) {
+          white-space: nowrap;
+          font-size: 48px;
+          letter-spacing: 2.4px;
+        }
+      }
+
+      .shop-postCard__text {
+        background-image: linear-gradient(180deg, rgba(204, 204, 204, 0) 0%, rgba(204, 204, 204, 0) 97%, #4F4F4F 100%);
+        background-repeat: repeat-y;
+        background-size: 100% 2.4em;
+        color: #4F4F4F;
+        font-family: var.$font-Noto;
+        line-height: 240%;
+        position: relative;
+
+        @include bre.mq(pc) {
+          width: 55%;
+        }
+      }
+
+      .shop-postCard__message {
+        position: absolute;
+        bottom: -70.27px;
+        right: -21.72px;
+        max-width: 303.792px;
+        width: 100%;
+
+        @include bre.mq(pc) {
+          bottom: -18%;
+          right: -32%;
+        }
+
+        @include bre.mq(pc-l) {
+          bottom: -18%;
+          right: -37%;
+        }
+      }
+    }
+  }
+}

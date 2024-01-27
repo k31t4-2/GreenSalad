@@ -1,0 +1,92 @@
+@use "./breakpoint" as bre;
+@use "./variable" as var;
+
+.fv {
+  position: relative;
+  height: 100%;
+
+  @include bre.mq(pc-l) {
+  }
+
+  .fv__inner {
+    padding-left: 5%;
+    position: absolute;
+    top: 30px;
+
+    @include bre.mq(pc) {
+      top: 94px;
+      padding-left: 12.3%;
+    }
+  }
+
+  .fv__img {
+    margin-left: auto;
+    height: 100%;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .fv__img-pc {
+    display: none;
+
+    @include bre.mq(pc-l) {
+      display: block;
+      width: 75%;
+      z-index: -1;
+    }
+
+  }
+
+  .fv__img-sp {
+    width: 82%;
+    z-index: -1;
+
+    @include bre.mq(pc-l) {
+      display: none;
+    }
+  }
+
+
+  .fv__lead {
+    color: var.$color-white;
+    font-family: var.$font-Reross;
+  }
+
+  .fv__lead-en {
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-size: clamp(36px, 5vw, 100px);
+
+    @include bre.mq(pc) {}
+
+    span {
+      color: var.$color-accent;
+    }
+  }
+
+  .fv__lead-ja {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+    font-size: clamp(14px, 5vw, 32px);
+    font-style: normal;
+    line-height: normal;
+
+    @include bre.mq(pc) {
+      letter-spacing: 1.6px;
+      line-height: 2;
+    }
+
+    span {
+      background-color: var.$color-accent;
+      padding: 4px 8px 7px 3px;
+
+    }
+  }
+}

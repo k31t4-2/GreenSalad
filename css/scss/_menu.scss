@@ -1,0 +1,445 @@
+@use "./breakpoint" as bre;
+@use "./variable" as var;
+
+.menu {
+  background-color: var.$color-base;
+  position: relative;
+  padding-right: 16px;
+  padding-left: 16px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  @include bre.mq(pc) {
+    padding: 70px;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 32px);
+    height: calc(100% - 48px);
+    border: 2px solid #FFF;
+
+    @include bre.mq(pc) {
+      height: calc(100% - 140px);
+      width: calc(100% - 10%);
+    }
+  }
+
+  .menu__inner {
+    padding-top: 56px;
+    padding-bottom: 56px;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    @include bre.mq(pc) {
+      padding-top: 152px;
+      max-width: calc(1080px + 40px);
+      margin: 0 auto;
+    }
+
+    .menu__head {
+      .heading {
+        margin-bottom: 48px;
+
+        @include bre.mq(pc) {
+          margin-bottom: 32px;
+        }
+
+        .heading-ja {
+          color: var.$color-white;
+        }
+
+        .heading-en {
+          color: var.$color-white;
+        }
+      }
+
+      .heading-description {
+        text-align: center;
+        color: var.$color-white;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.48px;
+        margin-bottom: 48px;
+
+        @include bre.mq(pc) {
+          margin-bottom: 54px;
+          letter-spacing: 0.54px;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .menu__content {
+
+      .menu__boxes {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 48px;
+        margin-bottom: 48px;
+
+        // 共通のメニューボックスを定義
+        .menu-box {
+
+          .menu-box__head {
+            position: relative;
+            z-index: 100;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .menu-box__body {
+            background: var.$color-main;
+            position: relative;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding-top: 58px;
+            padding-bottom: 42px;
+            z-index: 99;
+            margin-top: -54px;
+            padding-top: 56px;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+
+            @include bre.mq(pc) {
+              gap: 20px;
+              padding-top: 73px;
+              padding-right: 13px;
+              padding-left: 13px;
+              padding-bottom: 13px;
+            }
+
+            &::before {
+              content: '';
+              display: block;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: calc(100% - 20px);
+              height: calc(100% - 20px);
+
+              border: 1px solid var.$color-black;
+
+              @include bre.mq(pc) {
+                width: calc(100% - 26px);
+                height: calc(100% - 26px);
+              }
+            }
+
+            .menu-box__body-inner {
+              padding-right: 1%;
+              padding-left: 1%;
+            }
+
+            .menu-box__title {
+              color: var.$color-black;
+              font-family: var.$font-Noto;
+              font-size: 24px;
+              font-weight: 700;
+              line-height: 150%;
+              letter-spacing: 2.4px;
+
+              @include bre.mq(pc) {
+                font-size: 30px;
+                line-height: normal;
+                letter-spacing: 3px;
+              }
+            }
+
+            .menu-box__price {
+              font-family: var.$font-Reross;
+              font-size: 30px;
+              font-weight: 400;
+              letter-spacing: 3px;
+
+              @include bre.mq(pc) {
+                font-size: 40px;
+                line-height: normal;
+                letter-spacing: 4px;
+              }
+
+              span {
+                &:nth-child(1) {
+                  font-family: var.$font-Reross;
+                  font-size: 18px;
+                  letter-spacing: 1.8px;
+
+                  @include bre.mq(pc) {
+                    font-size: 24px;
+                    letter-spacing: 2.4px;
+                  }
+                }
+
+                &:nth-child(2) {
+                  font-family: var.$font-Noto;
+                  font-size: 12px;
+                  letter-spacing: 1.2px;
+
+                  @include bre.mq(pc) {
+                    font-size: 18px;
+                    letter-spacing: 1.8px;
+                  }
+                }
+
+              }
+            }
+
+            .menu-box__pfc {
+              color: var.$color-black;
+              font-family: var.$font-Noto;
+              font-size: 14px;
+              letter-spacing: 0.42px;
+
+              @include bre.mq(pc) {
+                margin-bottom: 22px;
+              }
+
+              @include bre.mq(pc-l) {
+                letter-spacing: 0.72px;
+                font-size: 20px;
+              }
+            }
+          }
+        }
+
+        // メインのボックスを定義
+        .menu-box__main-box {
+          .menu-box {
+
+            @include bre.mq(pc) {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: space-around;
+            }
+
+            .menu-box__head {
+              @include bre.mq(pc) {
+                width: 41.7%;
+                margin-right: -100px;
+              }
+            }
+
+            .menu-box__body {
+              position: relative;
+              padding-top: 121px;
+
+              @include bre.mq(pc) {
+                margin-top: 0;
+                padding-top: 113px;
+                width: 54.8%;
+              }
+
+
+              .tag {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: fit-content;
+                border: 2px solid var.$color-accent;
+                background: var.$color-accent;
+                color: var.$color-white;
+                padding: 38px 50px 16px;
+
+                @include bre.mq(pc) {
+                  padding: 9px 51px 14px 52px;
+                }
+
+                p {
+                  font-family: var.$font-Satisfy;
+                  letter-spacing: 0.36px;
+                }
+
+                h4 {
+                  font-family: var.$font-Noto;
+                  letter-spacing: 0.54px;
+                }
+              }
+            }
+          }
+        }
+
+        // サブのボックスを定義
+        .menu-box__sub-box {
+          display: flex;
+          flex-direction: column;
+          gap: 48px;
+          align-items: stretch;
+
+          @include bre.mq(pc) {
+            flex-direction: row;
+            align-items: end;
+            gap: 32px;
+          }
+
+
+          .menu-box {
+            flex: 1;
+          }
+        }
+      }
+
+      .menu-instagram {
+        background: var.$color-main;
+        position: relative;
+        padding-top: 74px;
+        padding-bottom: 34px;
+        padding-right: 20px;
+        padding-left: 20px;
+
+        @include bre.mq(pc) {
+          padding-top: 101px;
+        }
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          width: calc(100% - 20px);
+          margin-right: 10px;
+          margin-left: 10px;
+          height: calc(100% - 20px);
+          margin-top: 10px;
+          margin-bottom: 10px;
+          border: 1px solid var.$color-black;
+        }
+
+
+        .tag {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: fit-content;
+          background: var.$color-accent;
+          padding: 10px 34px 11px;
+          color: var.$color-white;
+          font-family: var.$font-Reross;
+          font-size: 24px;
+          line-height: normal;
+
+          @include bre.mq(pc) {
+            padding: 18px 107px 19px;
+            letter-spacing: 1.5px;
+            font-size: 30px;
+          }
+        }
+
+        .menu-instagram__description {
+          color: var.$color-black;
+          font-family: var.$font-Noto;
+          letter-spacing: 0.8px;
+          margin-bottom: 24px;
+          text-align: center;
+          font-size: 16px;
+
+          @include bre.mq(pc) {
+            font-size: 18px;
+            letter-spacing: 0.9;
+            margin-bottom: 34px;
+          }
+        }
+
+        .menu-instagram__content {
+          text-align: center;
+          z-index: 99;
+
+          .menu-instagram__images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+            margin-bottom: 8px;
+
+            @include bre.mq(pc) {
+              max-width: 972px;
+              display: flex;
+              flex-direction: row;
+              margin: auto;
+              gap: 16px;
+            }
+          }
+
+          .menu-instagram__image {
+            flex: 1;
+
+            img {
+              width: 100%;
+              height: auto;
+              object-fit: cover;
+            }
+
+            @include bre.mq(pc) {
+              max-width: 231px;
+            }
+          }
+        }
+
+        .menu-instagram__id {
+          margin-bottom: 24px;
+          color: var.$color-black;
+          font-family: var.$font-Noto;
+        }
+
+        .button {
+          display: block;
+          margin-bottom: 24px;
+
+          .button-link {
+            display: inline-block;
+            padding: 15px 56px 16px 36px;
+            border: 1px solid #333;
+            color: var.$color-black;
+            font-family: var.$font-Noto;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.48px;
+            position: relative;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            &::after {
+              content: '';
+              display: block;
+              position: absolute;
+              top: 50%;
+              right: 17px;
+              transform: translateY(-50%);
+              background-image: url(../../icon/button.png);
+              background-repeat: no-repeat;
+              background-size: cover;
+              width: 19px;
+              height: 19px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

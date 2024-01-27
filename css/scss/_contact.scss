@@ -1,0 +1,296 @@
+@use "./breakpoint" as bre;
+@use "./variable" as var;
+
+/*============================
+#contact
+============================*/
+.contact {
+  background-image: url(../../img/contact/img-sp：野菜.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 130px 0;
+
+  @include bre.mq(pc) {
+    background-image: url(../../img/contact/img：野菜.png);
+  }
+
+  .inner.contact__inner {
+    padding: 0 16px;
+    max-width: 800px;
+    margin: auto;
+
+    .contact__box {
+      background-color: var.$color-main;
+      padding: 64px 16px;
+
+      @include bre.mq(pc) {
+        padding: 64px 140px 72px;
+      }
+
+      .contact__head {
+        margin-bottom: 32px;
+
+        .heading {
+          margin-bottom: 48px;
+        }
+
+        .heading-description {
+          text-align: left;
+          color: var.$color-black;
+          font-family: var.$font-Noto;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: normal;
+          letter-spacing: 0.48px;
+        }
+      }
+    }
+  }
+}
+
+.form {
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    @include bre.mq(pc) {
+      gap: 4px;
+    }
+
+    // label --------------------------
+    &-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      @include bre.mq(pc) {
+        gap: 16px;
+      }
+    }
+
+    &-label {
+      color: var.$color-black;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+      @include bre.mq(pc) {
+        font-size: 18px;
+      }
+    }
+
+    &-tag {
+      display: inline-block;
+      border-radius: 6px;
+      background: var.$color-accent;
+      padding: 1px 7px 3px 8px;
+      color: #FFF;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    // input ----------------------
+    &-input {
+      flex-grow: 1;
+
+      .input-text {
+        width: 100%;
+        border: 1px solid var.$color-base;
+        background-color: #fff;
+        padding: calc(16px - 1px);
+        font-size: 16px;
+
+        @include bre.mq(pc) {
+          font-size: 16px;
+          padding-top: calc(14px - 1px);
+          padding-bottom: calc(14px - 1px);
+          padding-right: calc(23px - 1px);
+          padding-left: calc(23px - 1px);
+        }
+
+        &:hover,
+        &:focus {
+          border: 1px solid var.$color-accent;
+          box-shadow: 0px 0px 3px 1px var.$color-accent, inset 0px 0px 3px 1px var.$color-accent;
+          background: #fff;
+          padding: calc(16px - 1px);
+          outline: none;
+
+          @include bre.mq(pc) {
+            padding-top: calc(14px - 1px);
+            padding-bottom: calc(14px - 1px);
+            padding-right: calc(23px - 1px);
+            padding-left: calc(23px - 1px);
+          }
+        }
+      }
+    }
+
+    // textarea ----------------------------
+    &-text {
+      flex-grow: 1;
+
+      textarea {
+        width: 100%;
+        border: 1px solid var.$color-base;
+        background-color: #fff;
+        padding: calc(16px - 1px);
+        font-size: 16px;
+
+        @include bre.mq(pc) {
+          font-size: 16px;
+        }
+
+        &:hover,
+        &:focus {
+          border: 1px solid var.$color-accent;
+          box-shadow: 0px 0px 3px 1px var.$color-accent, inset 0px 0px 3px 1px var.$color-accent;
+          background: #fff;
+          padding: calc(16px - 1px);
+          outline: none;
+        }
+      }
+    }
+  }
+
+  // privacy ----------------------------
+
+  &__privacy {
+    margin-bottom: 30px;
+    text-align: center;
+
+    @include bre.mq(pc) {
+      margin-bottom: 38px;
+    }
+
+    &-input {
+      width: 1px;
+      height: 1px;
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+      overflow: hidden;
+
+      &:checked {
+
+        // inputがクリックされたらチェックのアイコンを表示させる
+        +.form__privacy-text {
+          &::before {
+            background: rgba(21, 151, 65, 0.15);
+            border: 1px solid var.$color-accent;
+            box-shadow: 0px 0px 3px 1px var.$color-accent, inset 0px 0px 3px 1px var.$color-accent;
+          }
+
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+
+      // フォーカスしたらborderの色をかえる
+      &:focus {
+        +.form__privacy-text {
+          &::before {
+            border-color: var.$color-accent;
+          }
+        }
+      }
+    }
+
+    &-text {
+      font-size: 16px;
+      line-height: 1.7;
+      padding-left: 43px;
+      position: relative;
+      font-weight: 400;
+
+      @include bre.mq(pc) {
+        font-size: 18px;
+        line-height: 150%;
+        letter-spacing: 0.9px;
+      }
+
+      &:hover {
+        &::before {
+          border: 1px solid var.$color-base;
+          background: #FFF;
+          border: 1px solid var.$color-accent;
+          box-shadow: 0px 0px 3px 1px var.$color-accent, inset 0px 0px 3px 1px var.$color-accent;
+        }
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+      }
+
+      // チェックボックスの箱を作成 -------------------
+      &::before {
+        width: 30px;
+        height: 30px;
+        border-radius: 1px;
+        border: 1px solid #111;
+        background-color: #fff;
+      }
+
+      // チェックのアイコン ------------------
+      &::after {
+        background: url(../../img/icon/akar-icons-check.png) no-repeat center center / contain;
+        height: 26px;
+        width: 30px;
+        left: -1px;
+        opacity: 0;
+      }
+
+
+      // 「プライバシーポリシー」の色を変更
+      a {
+        font-weight: 400;
+        cursor: pointer;
+        text-decoration: underline;
+        color: var.$color-accent;
+      }
+    }
+
+  }
+
+  // submit --------------------------------
+  &__submit {
+    text-align: center;
+
+    .button {
+      width: 300px;
+      height: 56px;
+      background: #159741;
+      color: var.$color-white;
+      font-family: var.$font-Noto;
+      border: none;
+      font-weight: 500;
+      line-height: 150%;
+      letter-spacing: 0.9px;
+
+      @include bre.mq(pc) {
+        padding-right: 36px;
+        padding-left: 36px;
+        font-size: 16px;
+        width: 239px;
+        height: 56px;
+        font-size: 18px;
+      }
+    }
+  }
+}

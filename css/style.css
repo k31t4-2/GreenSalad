@@ -1364,7 +1364,8 @@ body {
 }
 @media (min-width: 768px ) {
   .contact {
-    background-image: url(../img/contact/img：野菜.png);
+    background-image: url(../img/contact/img-backgrounud.png);
+    background-position: center center;
   }
 }
 .contact .inner.contact__inner {

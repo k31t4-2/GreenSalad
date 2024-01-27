@@ -40,7 +40,7 @@
     padding-left: 16px;
 
     @include bre.mq(pc) {
-      padding: 0;
+      // padding: 0;
     }
   }
 
@@ -167,7 +167,6 @@
     max-width: 1146px;
     margin: auto;
     padding: 30px 32px 41px 34px;
-    margin: 0 16px;
   }
 
   .shop-postCard__inner {

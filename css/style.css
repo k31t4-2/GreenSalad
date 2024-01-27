@@ -1073,11 +1073,6 @@ body {
   padding-left: 16px;
 }
 @media (min-width: 768px ) {
-  .shop .shop__inner {
-    padding: 0;
-  }
-}
-@media (min-width: 768px ) {
   .shop .shop__info-wrap {
     max-width: 1260px;
     margin: auto;
@@ -1205,7 +1200,6 @@ body {
     max-width: 1146px;
     margin: auto;
     padding: 30px 32px 41px 34px;
-    margin: 0 16px;
   }
 }
 .shop-postCard .shop-postCard__inner .shop-postCard__images {

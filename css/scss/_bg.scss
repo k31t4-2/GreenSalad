@@ -13,16 +13,16 @@
   }
 }
 .salad-bg {
-  background-image: url(../../img/background/img-sp：サラダ.png);
+  background-image: url(../img/background/img-sp：サラダ.png);
 
   @include bre.mq(pc) {
-    background-image: url(../../img/background/img：サラダ.jpg);
+    background-image: url(../img/background/img：サラダ.jpg);
   }
 }
 .shop-bg {
-  background-image: url(../../img/background/img-sp：店内.png);
+  background-image: url(../img/background/img-sp：店内.png);
 
   @include bre.mq(pc) {
-    background-image: url(../../img/background/img：店内.png);
+    background-image: url(../img/background/img：店内.png);
   }
 }

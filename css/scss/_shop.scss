@@ -39,9 +39,6 @@
     padding-right: 16px;
     padding-left: 16px;
 
-    @include bre.mq(pc) {
-      // padding: 0;
-    }
   }
 
   .shop__info-wrap {
@@ -130,29 +127,17 @@
       letter-spacing: 0.48px;
     }
 
-    .shop-info__text {
-
-      .shop-info__postCode {}
-
-      .shop-info__address {}
-
-      .shop-info__tel {}
-    }
-
     // table ----------
     .shop-info__detail {
       tr {
         display: flex;
         flex-direction: row;
         gap: 10px;
-
       }
 
       th {
         min-width: 70px;
       }
-
-      td {}
     }
   }
 

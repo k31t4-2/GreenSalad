@@ -1596,7 +1596,7 @@ body {
   background-color: #fff;
 }
 .form__privacy-text::after {
-  background: url(../img/icon/akar-icons-check.png) no-repeat center center/contain;
+  background: url(../icon/form-check.png) no-repeat center center/contain;
   height: 26px;
   width: 30px;
   left: -1px;
